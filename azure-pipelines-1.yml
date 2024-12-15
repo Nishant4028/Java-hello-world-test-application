@@ -22,6 +22,9 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+- script: ls -la $(System.DefaultWorkingDirectory)
+  displayName: 'List files in working directory'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/target'
