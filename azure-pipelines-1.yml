@@ -10,11 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
+    azureSubscription: 'aks-az-cloud-connection'
     mavenPomFile: 'pom.xml'
-    goals: 'clean install'
-    options: '-Xmx1024m'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
